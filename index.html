@@ -1,130 +1,185 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: #fafafa;
-      color: #333;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Playfair+Display&display=swap" rel="stylesheet">
 
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      background: #fff;
-    }
+<style>
+body {
+  margin:0;
+  font-family:'Noto Sans KR', sans-serif;
+  background:#f8f6f3;
+  color:#444;
+}
 
-    .section {
-      padding: 40px 20px;
-    }
+.container{
+  max-width:480px;
+  margin:0 auto;
+  background:#fff;
+}
 
-    .main-img {
-      width: 100%;
-      height: auto;
-    }
+.section{
+  padding:50px 24px;
+  text-align:center;
+}
 
-    h1 {
-      font-size: 26px;
-      margin: 20px 0 10px;
-    }
+h1{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  letter-spacing:1px;
+}
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+h2{
+  font-size:18px;
+  margin-bottom:12px;
+}
 
-    p {
-      font-size: 15px;
-      line-height: 1.6;
-    }
+p{
+  font-size:14px;
+  line-height:1.7;
+}
 
-    .date {
-      font-weight: bold;
-      margin-top: 10px;
-    }
+.main-img{
+  width:100%;
+}
 
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: #ddd;
-      margin: 30px auto;
-    }
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 1s ease;
+}
 
-    .map-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin-top: 10px;
-      background: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 20px;
-      font-size: 14px;
-    }
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    footer {
-      font-size: 12px;
-      color: #aaa;
-      padding: 20px 0;
-    }
-  </style>
+.divider{
+  width:30px;
+  height:1px;
+  background:#ddd;
+  margin:30px auto;
+}
+
+.button{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:30px;
+  background:#222;
+  color:#fff;
+  font-size:13px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+.gallery img{
+  width:100%;
+  margin-bottom:10px;
+  border-radius:8px;
+}
+
+.toggle{
+  background:#f1f1f1;
+  padding:12px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.hidden{
+  display:none;
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  padding:20px;
+  color:#aaa;
+}
+</style>
 </head>
 
 <body>
+<div class="container">
 
-  <div class="container">
+<img src="main.jpg" class="main-img">
 
-    <!-- 메인 이미지 -->
-    <img src="main.jpg" class="main-img" alt="웨딩 이미지">
+<div class="section fade">
+  <h1>OOO & OOO</h1>
+  <p>
+    서로가 마주보며 다져온 사랑을<br>
+    이제 함께 한 곳을 바라보며<br>
+    걸어가려 합니다.
+  </p>
+  <p><b>2026.05.10 SUN 2PM</b></p>
+</div>
 
-    <!-- 인사말 -->
-    <div class="section">
-      <h1>OOO ♥ OOO</h1>
-      <p>
-        서로가 마주보며 다져온 사랑을<br>
-        이제 함께 한 곳을 바라보며<br>
-        걸어갈 수 있는 큰 사랑으로 키우고자 합니다.
-      </p>
+<div class="divider"></div>
 
-      <div class="date">
-        2026년 5월 10일 (일) 오후 2시
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 장소 -->
-    <div class="section">
-      <h2>오시는 길</h2>
-      <p>
-        서울 ○○웨딩홀<br>
-        서울시 ○○구 ○○로 123
-      </p>
-
-      <a href="https://maps.google.com" class="map-btn" target="_blank">
-        지도 보기
-      </a>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 연락 -->
-    <div class="section">
-      <h2>연락하기</h2>
-      <p>신랑 OOO 📞 010-0000-0000</p>
-      <p>신부 OOO 📞 010-0000-0000</p>
-    </div>
-
-    <footer>
-      © 2026 Wedding Invitation
-    </footer>
-
+<div class="section fade">
+  <h2>갤러리</h2>
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
   </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section fade">
+  <h2>오시는 길</h2>
+  <p>서울 ○○웨딩홀<br>서울시 ○○구 ○○로 123</p>
+  <a href="https://maps.google.com" class="button" target="_blank">지도 보기</a>
+</div>
+
+<div class="divider"></div>
+
+<div class="section fade">
+  <h2>마음 전하실 곳</h2>
+  <div class="toggle" onclick="toggleAccount()">계좌번호 보기</div>
+  <div id="account" class="hidden">
+    <p>신랑: 000-0000-0000</p>
+    <p>신부: 000-0000-0000</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section fade">
+  <h2>연락하기</h2>
+  <p>신랑 📞 010-0000-0000</p>
+  <p>신부 📞 010-0000-0000</p>
+</div>
+
+<footer>
+  © 2026 Wedding Invitation
+</footer>
+
+</div>
+
+<script>
+// 스크롤 애니메이션
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+
+// 계좌 토글
+function toggleAccount(){
+  const el = document.getElementById('account');
+  el.classList.toggle('hidden');
+}
+</script>
 
 </body>
 </html>
