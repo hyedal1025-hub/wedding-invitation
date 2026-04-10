@@ -107,9 +107,10 @@ p {
 }
 
 .gallery-item {
-  flex: 0 0 100%; /* 한 화면에 하나씩 */
+  flex: 0 0 85%; /* 한 화면에 하나씩 */
   scroll-snap-align: center;
   margin-right: 15px;
+   transition: transform 0.3s ease;
 }
 
 .gallery-item img {
@@ -118,6 +119,9 @@ p {
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+  .gallery-item.active {
+  transform: scale(1.02);
 }
 
 /* 페이지네이션 도트 */
@@ -293,6 +297,23 @@ slider.addEventListener('scroll', () => {
 function toggleAccount(){
   document.getElementById('account').classList.toggle('hidden');
 }
+  
+  // 4. 슬라이드 중앙 정렬 (아이폰 느낌 핵심)
+let isScrolling;
+
+slider.addEventListener('scroll', () => {
+  clearTimeout(isScrolling);
+
+  isScrolling = setTimeout(() => {
+    const index = Math.round(slider.scrollLeft / slider.clientWidth);
+    const target = index * slider.clientWidth;
+
+    slider.scrollTo({
+      left: target,
+      behavior: 'smooth'
+    });
+  }, 100);
+});
 </script>
 
 </body>
